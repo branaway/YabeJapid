@@ -1,0 +1,24 @@
+~[
+	extends main.html
+	args ArrayList<Post> posts, String tag
+]~
+
+#{set title:"Posts tagged with " + tag /}
+ 
+*{ Title }*
+ 
+~[if(posts.size() > 1){]~
+   <h3>There are ${posts.size()} posts tagged '${tag}'..</h3>  
+~[}else if (asBoolean(posts)) {]~
+    <h3>There is 1 post tagged '${tag}'.</h3>  
+~[}else{]~
+    <h3>No post tagged '${tag}'</h3>
+~[}]~
+ 
+*{ Posts list }* 
+  
+<div class="older-posts">    
+    #{Each posts | Post post}
+        #{display post, "teaser"/}
+    #{/}
+</div> 

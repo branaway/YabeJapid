@@ -1,0 +1,13 @@
+#{extends 'admin.html' /}
+
+<h3>Welcome ${user}, <span>you have written ${posts.size() ?: 'no'} ${posts.pluralize('post', 'posts')} so far</span></h3>
+
+#{each posts }
+    <p class="post $_parity">
+        <a href="@{form(_.id)}">$_.title!</a>
+    </p>
+#{/each}
+
+<p id="newPost" >
+    <a href="@{form()}"><span>+</span> write a new post</a>
+</p>

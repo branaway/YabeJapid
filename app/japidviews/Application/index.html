@@ -1,0 +1,22 @@
+`contentType 	text/html
+`extends 		main.html
+`args 			Post frontPost, List<Post> olderPosts
+
+
+#{set title}HOME #{/}
+
+`if(frontPost != null) {
+    #{display (frontPost, "home") /}
+    `if (olderPosts.size() > 0) {
+        <div class="older-posts">    
+            <h3>Older posts <span class="from">from the blog</span></h3>
+			`for (Post p : olderPosts) {
+				#{display(p, "home")/}
+            `}
+        </div>
+    `}
+`} else {
+    <div class="empty">
+        There is currently nothing to read here.
+    </div>
+`}

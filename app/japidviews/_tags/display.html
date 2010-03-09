@@ -1,0 +1,53 @@
+*{ Display a post in one of these modes: 'full', 'home' or 'teaser' }*
+
+`args models.Post _p, String _as
+
+<div class='post ${_as.equals("teaser")?"teaser":""}'>
+    <h2 class="post-title">
+        <a href="@{Application.show(_p.id)}">$_p.title</a>
+    </h2>
+    <div class="post-metadata">
+        <span class="post-author">by $_p.author.fullname </span>,
+        <span class="post-date">$format(_p.postedAt, "dd MMM yy")</span>
+        `if (!"full".equals(_as)) { 
+            <span class="post-comments">
+                &nbsp;|&nbsp; $numOf(_p.comments) comment$pluralize(_p.comments).
+                `if (asBoolean(_p.comments)){ 
+                    , latest by $lastOf(_p.comments).author
+                `}
+            </span>
+		`} else if (asBoolean(_p.tags)) {
+            <span class="post-tags">
+                - Tagged 
+                #{Each _p.tags | Tag _ }
+                    <a href="@{Application.listTagged(_.name)}">$_</a>${_isLast?"":", "}
+                #{/}
+            </span>
+        `}
+    </div> 
+    `if (!"teaser".equals(_as)){
+        <div class="post-content">
+            <div class="about">Detail: </div>
+            $nl2br(_p.content)
+        </div>
+    `}
+</div>
+ 
+`if ("full".equals(_as)){
+    <div class="comments">
+        <h3>$numOf(_p.comments) comment$pluralize(_p.comments)</h3>
+        
+        #{Each _p.comments | Comment _}
+            <div class="comment">
+                <div class="comment-metadata">
+                    <span class="comment-author">by $_.author</span>
+                    <span class="comment-date">$format(_.postedAt, "dd MMM yy")</span>
+                </div>
+                <div class="comment-content">
+                    <div class="about">Detail: </div>
+                    $nl2br(escape(_.content))
+                </div>
+            </div>
+        #{/}
+    </div>
+`}

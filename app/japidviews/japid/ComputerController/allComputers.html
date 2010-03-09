@@ -1,0 +1,18 @@
+~[
+	import models.japidsample.*
+	extends ComputerLayout.html
+	args ArrayList<Computer> computers
+]~
+
+#{set title:"列表of computer "/}
+
+~[if (computers.size() == 0) {]~
+	<p>The computer list is empty</p>
+~[} else {]~
+	#{Each computers |Computer c}
+		<div class="computer ${_parity}">
+			#{ComputerDetail c/}
+		</div>
+	#{/}
+~[}]~
+

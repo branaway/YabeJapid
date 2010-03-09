@@ -1,0 +1,65 @@
+`extends 	main.html
+`args		Post post
+`stopwatch	off
+
+#{set title:post.title /}
+
+<ul id="pagination">
+    `if (post.previous() != null) { 
+        <li id="previous">
+            <a href="@{Application.show(post.previous().id)}">$post.previous().title</a>
+        </li>
+    `}
+    `if (post.next() != null) {
+        <li id="next">
+            <a href="@{Application.show(post.next().id)}">$post.next().title</a>
+        </li>
+    `}
+</ul>
+
+`if(flash.hasSuccess()){
+    <p class="success">$flash.success()</p>
+`}
+ 
+#{display post, "full" /}
+
+<h3>Post your comment 1:</h3>
+ 
+<form action='@{Application.postComment(post.id)}' method="POST"> 
+    `if(hasErrors()){
+        <p class="error">
+            ${errors().get(0)}
+        </p>
+    `}
+ 
+    <p>
+        <label for="author">Your name: </label>
+        <input type="text" name="author" id="author" value='${params.get("author")}' />
+    </p>
+    <p>
+        <label for="content">Your message: </label>
+        <textarea name="content" id="content">${params.get("content")}</textarea>
+    </p>
+    <p>
+ 		#{invoke Application.captchaBlock()/}
+    </p>
+    <p>
+        <input type="submit" value="Submit your comment" />
+    </p>
+</form>
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {         
+        // Expose the form 
+        $('form').click(function() { 
+            $('form').expose({api: true}).load(); 
+        }); 
+        
+        // If there is an error, focus to form
+        if($('form .error').size()) {
+            $('form').expose({api: true, loadSpeed: 0}).load(); 
+            $('form input').get(0).focus();
+        }
+    });
+    // depends on JQuery
+</script>
