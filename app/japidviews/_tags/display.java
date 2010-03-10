@@ -11,6 +11,7 @@ import japidviews._javatags.*;
 import static play.templates.JavaExtensions.*;
 import static cn.bran.play.JapidPlayAdapter.*;
 import static play.data.validation.Validation.*;
+import static cn.bran.play.WebUtils.*;
 // NOTE: This file was generated from: japidviews/_tags/display.html
 // Change to this file will be lost next time the template file is compiled.
 @cn.bran.play.NoEnhance
@@ -18,8 +19,8 @@ public class display extends cn.bran.japid.template.JapidTemplateBase{
 	public static final String sourceTemplate = "japidviews/_tags/display.html";
 static private final String static_0 = ""
 ;
-static private final String static_1 = "\n" + 
-"";
+static private final String static_1 = ""
+;
 static private final String static_2 = "<div class='post "
 ;
 static private final String static_3 = "'>\n" + 
@@ -130,68 +131,68 @@ static private final String static_32 = ""
 	@Override protected void doLayout() {
 p(static_0);// line 1
 p(static_1);// line 1
-p(static_2);// line 3
-p(_as.equals("teaser")?"teaser":"");// line 5
-p(static_3);// line 5
-p(lookup("Application.show", _p.id));// line 7
-p(static_4);// line 7
-p(_p.title);// line 7
-p(static_5);// line 7
-p(_p.author.fullname);// line 10
-p(static_6);// line 10
-p(format(_p.postedAt, "dd MMM yy"));// line 11
-p(static_7);// line 11
-if (!"full".equals(_as)) { // line 12
-p(static_8);// line 12
-p(numOf(_p.comments));// line 14
-p(static_9);// line 14
-p(pluralize(_p.comments));// line 14
-p(static_10);// line 14
-if (asBoolean(_p.comments)){ // line 15
-p(static_11);// line 15
-p(lastOf(_p.comments).author);// line 16
-p(static_12);// line 16
-}// line 17
-p(static_13);// line 17
-} else if (asBoolean(_p.tags)) {// line 19
-p(static_14);// line 19
+p(static_2);// line 2
+p(_as.equals("teaser")?"teaser":"");// line 4
+p(static_3);// line 4
+p(lookup("Application.show", _p.id));// line 6
+p(static_4);// line 6
+p(_p.title);// line 6
+p(static_5);// line 6
+p(_p.author.fullname);// line 9
+p(static_6);// line 9
+p(fastformat(_p.postedAt, "dd MMM yy"));// line 10
+p(static_7);// line 10
+if (!"full".equals(_as)) { // line 11
+p(static_8);// line 11
+p(numOf(_p.comments));// line 13
+p(static_9);// line 13
+p(pluralize(_p.comments));// line 13
+p(static_10);// line 13
+if (asBoolean(_p.comments)){ // line 14
+p(static_11);// line 14
+p(lastOf(_p.comments).author);// line 15
+p(static_12);// line 15
+}// line 16
+p(static_13);// line 16
+} else if (asBoolean(_p.tags)) {// line 18
+p(static_14);// line 18
 _Each0.setActionRunners(getActionRunners());
 _Each0.render(_p.tags, _Each0DoBody);
-// line 22
-p(static_19);// line 24
-}// line 26
-p(static_20);// line 26
-if (!"teaser".equals(_as)){// line 28
-p(static_21);// line 28
-p(nl2br(_p.content));// line 31
-p(static_22);// line 31
-}// line 33
-p(static_23);// line 33
-if ("full".equals(_as)){// line 36
-p(static_24);// line 36
-p(numOf(_p.comments));// line 38
-p(static_25);// line 38
-p(pluralize(_p.comments));// line 38
-p(static_26);// line 38
+// line 21
+p(static_19);// line 23
+}// line 25
+p(static_20);// line 25
+if (!"teaser".equals(_as)){// line 27
+p(static_21);// line 27
+p(nl2br(_p.content));// line 30
+p(static_22);// line 30
+}// line 32
+p(static_23);// line 32
+if ("full".equals(_as)){// line 35
+p(static_24);// line 35
+p(numOf(_p.comments));// line 37
+p(static_25);// line 37
+p(pluralize(_p.comments));// line 37
+p(static_26);// line 37
 _Each1.setActionRunners(getActionRunners());
 _Each1.render(_p.comments, _Each1DoBody);
-// line 40
-p(static_31);// line 51
-}// line 53
-p(static_32);// line 53
+// line 39
+p(static_31);// line 50
+}// line 52
+p(static_32);// line 52
 
 	}
 	private Each _Each0 = new Each(getOut());
 class Each0DoBody implements Each.DoBody< Tag>{
 	public void render(Tag _, int _index, boolean _isOdd, String _parity, boolean _isFirst, boolean _isLast) {
-		// line 22
-p(static_15);// line 22
-p(lookup("Application.listTagged", _.name));// line 23
-p(static_16);// line 23
-p(_);// line 23
-p(static_17);// line 23
-p(_isLast?"":", ");// line 23
-p(static_18);// line 23
+		// line 21
+p(static_15);// line 21
+p(lookup("Application.listTagged", _.name));// line 22
+p(static_16);// line 22
+p(_);// line 22
+p(static_17);// line 22
+p(_isLast?"":", ");// line 22
+p(static_18);// line 22
 
 	}
 }
@@ -200,14 +201,14 @@ p(static_18);// line 23
 	private Each _Each1 = new Each(getOut());
 class Each1DoBody implements Each.DoBody< Comment>{
 	public void render(Comment _, int _index, boolean _isOdd, String _parity, boolean _isFirst, boolean _isLast) {
-		// line 40
-p(static_27);// line 40
-p(_.author);// line 43
-p(static_28);// line 43
-p(format(_.postedAt, "dd MMM yy"));// line 44
-p(static_29);// line 44
-p(nl2br(escape(_.content)));// line 48
-p(static_30);// line 48
+		// line 39
+p(static_27);// line 39
+p(_.author);// line 42
+p(static_28);// line 42
+p(fastformat(_.postedAt, "dd MMM yy"));// line 43
+p(static_29);// line 43
+p(nl2br(escape(_.content)));// line 47
+p(static_30);// line 47
 
 	}
 }

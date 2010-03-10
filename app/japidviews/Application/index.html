@@ -2,10 +2,9 @@
 `extends 		main.html
 `args 			Post frontPost, List<Post> olderPosts
 
-
 #{set title}HOME #{/}
 
-`if(frontPost != null) {
+`if(frontPost != null) { 
     #{display (frontPost, "home") /}
     `if (olderPosts.size() > 0) {
         <div class="older-posts">    

@@ -11,6 +11,7 @@ import japidviews._javatags.*;
 import static play.templates.JavaExtensions.*;
 import static cn.bran.play.JapidPlayAdapter.*;
 import static play.data.validation.Validation.*;
+import static cn.bran.play.WebUtils.*;
 // NOTE: This file was generated from: japidviews/Application/index.html
 // Change to this file will be lost next time the template file is compiled.
 @cn.bran.play.NoEnhance
@@ -25,8 +26,8 @@ static private final String static_1 = ""
 ;
 static private final String static_2 = ""
 ;
-static private final String static_3 = "\n" + 
-"";
+static private final String static_3 = ""
+;
 static private final String static_4 = "HOME "
 ;
 static private final String static_5 = "\n" + 
@@ -72,34 +73,34 @@ p(static_0);// line 1
 p(static_1);// line 1
 p(static_2);// line 2
 p(static_3);// line 3
-// line 6
-p(static_5);// line 6
-if(frontPost != null) {// line 8
-p(static_6);// line 8
+// line 5
+p(static_5);// line 5
+if(frontPost != null) { // line 7
+p(static_6);// line 7
 _display1.setActionRunners(getActionRunners());
 _display1.render(frontPost, "home");
-// line 9
-p(static_7);// line 9
-if (olderPosts.size() > 0) {// line 10
-p(static_8);// line 10
-for (Post p : olderPosts) {// line 13
-p(static_9);// line 13
+// line 8
+p(static_7);// line 8
+if (olderPosts.size() > 0) {// line 9
+p(static_8);// line 9
+for (Post p : olderPosts) {// line 12
+p(static_9);// line 12
 _display2.setActionRunners(getActionRunners());
 _display2.render(p, "home");
-// line 14
-p(static_10);// line 14
-}// line 15
-p(static_11);// line 15
-}// line 17
-p(static_12);// line 17
-} else {// line 18
-p(static_13);// line 18
-}// line 22
+// line 13
+p(static_10);// line 13
+}// line 14
+p(static_11);// line 14
+}// line 16
+p(static_12);// line 16
+} else {// line 17
+p(static_13);// line 17
+}// line 21
 
 	}
 	@Override protected void title() {
-		// line 6
-p(static_4);// line 6
+		// line 5
+p(static_4);// line 5
 ;
 	}
 	private display _display1 = new display(getOut());

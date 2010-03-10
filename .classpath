@@ -6,9 +6,7 @@
 	<classpathentry kind="src" path="secure"/>
 	<classpathentry kind="src" path="japid"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/home/bran/projects/play/framework/play.jar" sourcepath="D:/home/bran/projects/play/framework"/>
-	<classpathentry kind="lib" path="D:/home/bran/projects/japid/lib/ant-launcher.jar"/>
-	<classpathentry kind="lib" path="D:/home/bran/projects/japid/lib/ant.jar"/>
+	<classpathentry kind="lib" path="D:/home/bran/projects/play/framework/play.jar" sourcepath="/play1.1"/>
 	<classpathentry kind="lib" path="D:/home/bran/projects/japid/lib/japid-0.3.2.jar" sourcepath="/Japid Module"/>
 	<classpathentry kind="lib" path="D:/home/bran/projects/japid/lib/play-japid-0.3.2.jar" sourcepath="/Japid Module"/>
 	<classpathentry kind="lib" path="D:/home/bran/projects/play/framework/lib/activation.jar"/>

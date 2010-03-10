@@ -12,6 +12,7 @@ import japidviews._javatags.*;
 import static play.templates.JavaExtensions.*;
 import static cn.bran.play.JapidPlayAdapter.*;
 import static play.data.validation.Validation.*;
+import static cn.bran.play.WebUtils.*;
 // NOTE: This file was generated from: japidviews/Application/superpanel.html
 // Change to this file will be lost next time the template file is compiled.
 @cn.bran.play.NoEnhance
@@ -55,7 +56,6 @@ p(static_2);// line 3
 			}
 		});
 
-		System.out.println("!!a");
 // line 5
 p(static_3);// line 5
 		actionRunners.put(getOut().length(), new cn.bran.japid.template.ActionRunner() {
@@ -70,7 +70,6 @@ p(static_3);// line 5
 				throw new RuntimeException("No render result from running: Application.panel2(who)");
 			}
 		});
-		System.out.println("!!b");
 // line 7
 p(static_4);// line 7
 

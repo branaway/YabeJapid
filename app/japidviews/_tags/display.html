@@ -1,5 +1,4 @@
 *{ Display a post in one of these modes: 'full', 'home' or 'teaser' }*
-
 `args models.Post _p, String _as
 
 <div class='post ${_as.equals("teaser")?"teaser":""}'>
@@ -8,7 +7,7 @@
     </h2>
     <div class="post-metadata">
         <span class="post-author">by $_p.author.fullname </span>,
-        <span class="post-date">$format(_p.postedAt, "dd MMM yy")</span>
+        <span class="post-date">$fastformat(_p.postedAt, "dd MMM yy")</span>
         `if (!"full".equals(_as)) { 
             <span class="post-comments">
                 &nbsp;|&nbsp; $numOf(_p.comments) comment$pluralize(_p.comments).
@@ -41,7 +40,7 @@
             <div class="comment">
                 <div class="comment-metadata">
                     <span class="comment-author">by $_.author</span>
-                    <span class="comment-date">$format(_.postedAt, "dd MMM yy")</span>
+                    <span class="comment-date">$fastformat(_.postedAt, "dd MMM yy")</span>
                 </div>
                 <div class="comment-content">
                     <div class="about">Detail: </div>

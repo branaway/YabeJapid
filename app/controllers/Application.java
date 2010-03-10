@@ -148,6 +148,7 @@ public class Application extends JapidController {
 	}
 
 	public static void panel1(final String who) {
+		System.out.println("panel1 invoked");
 		CacheableRunner r = new CacheableRunner("2s", "super1" + who) {
 			@Override
 			protected RenderResult render() {
@@ -159,6 +160,7 @@ public class Application extends JapidController {
 	}
 
 	public static void panel2(final String who) {
+		System.out.println("panel2 invoked");
 		CacheableRunner r = new CacheableRunner("6s", "super2" + who) {
 			@Override
 			protected RenderResult render() {
@@ -191,8 +193,8 @@ public class Application extends JapidController {
 		}
 		sb.append('\n');
 		sb.append("ignore Cache? " + RenderResultCache.shouldIgnoreCache());
-
-		render(new hello().render(sb.toString()));
+		renderText(sb.toString());
+//		render(new hello().render(sb.toString()));
 	}
 
 }

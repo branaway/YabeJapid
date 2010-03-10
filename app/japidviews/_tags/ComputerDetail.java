@@ -12,6 +12,7 @@ import models.japidsample.*;
 import static play.templates.JavaExtensions.*;
 import static cn.bran.play.JapidPlayAdapter.*;
 import static play.data.validation.Validation.*;
+import static cn.bran.play.WebUtils.*;
 // NOTE: This file was generated from: japidviews/_tags/ComputerDetail.html
 // Change to this file will be lost next time the template file is compiled.
 @cn.bran.play.NoEnhance
